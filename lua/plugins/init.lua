@@ -41,6 +41,7 @@ return {
         "pyright",
         "ts_ls",
         "eslint",
+        "ruff",
       },
       ui = {
         icons = {

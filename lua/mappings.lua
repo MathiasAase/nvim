@@ -9,7 +9,10 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 -- Delete to void and yank to clipboard
 map("n", "d", '"_d', { desc = "Delete to void" })
 -- map("n", "y", '"*y', {desc = "Yank to system clipboard"})
+--
+-- keybinding for code actions
 
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code Action" })
 -- Jump up/down and recenter
 map("n", "<C-u>", "<C-u>zz", { desc = "Jump up and recenter" })
 map("n", "<C-d>", "<C-d>zz", { desc = "Jump down and recenter" })
@@ -36,3 +39,9 @@ vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
   replace_keycodes = false,
 })
 vim.g.copilot_no_tab_map = true
+
+-- Copilot accept word
+vim.keymap.set("i", "<C-L>", "<Plug>(copilot-accept-word)")
+-- Copilot next/previous suggestion
+vim.keymap.set("i", "<C-N>", "<Plug>(copilot-next)")
+vim.keymap.set("i", "<C-B>", "<Plug>(copilot-previous)")
